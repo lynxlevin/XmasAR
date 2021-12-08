@@ -1,0 +1,33 @@
+// Place all the styles related to the ar controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.modal-back {
+  position: fixed;
+  top: 0;right: 0;bottom: 0;left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-back--invisible {
+  display: none;
+}
+
+.modal-body {
+  width: 320px;
+  height: 380px;
+  margin: 60px auto;
+  padding: 30px 13px 0;
+  background-color: white;
+  border-radius: 24px;
+}
+
+.modal-close {
+  position: fixed;
+  top: 62px;
+  right: 30px;
+  font-size: 40px;
+}
+
+.modal-text {
+  font-size: 22px;
+}
