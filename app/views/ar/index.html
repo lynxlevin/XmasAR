@@ -1,41 +1,36 @@
-<!doctype html>
-<html>
-    <head>
-        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-        <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-        <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
-        <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
-    </head>
+<div style="margin: 0; overflow: hidden;">
+    <a-scene
+        vr-mode-ui="enabled: false;"
+        renderer="logarithmicDepthBuffer: true;"
+        arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
+        device-orientation-permission-ui="enabled: false;"
+        embedded
+    >
+        <a-assets>
+            <a-asset-item
+                id="animated-asset1"
+                src="assets/2-1.glb"
+                response-type="arraybuffer"
+            ></a-asset-item>
+        </a-assets>
 
-    <body style="margin: 0; overflow: hidden;">
-        <a-scene
-            vr-mode-ui="enabled: false;"
-            loading-screen="enabled: false;"
-            arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
-            id="scene"
-            embedded
-            gesture-detector
+        <a-marker
+            id="animated-marker1"
+            type="pattern"
+            preset="custom"
+            url="assets/pattern-1.patt"
+            registerevents
         >
-            <a-marker
-                id="animated-marker"
-                type="pattern"
-                preset="custom"
-                url="assets/marker.patt"
-                raycaster="objects: .clickable"
-                emitevents="true"
-                cursor="fuse: false; rayOrigin: mouse;"
-                id="markerA"
-            >
-                <a-image
-                    src="assets/asset.jpeg"
-                    scale="1 1 1"
-                    class="clickable"
-                    rotation="-90 0 0"
-                    gesture-handler
-                ></a-image>
-            </a-marker>
-
-            <a-entity camera></a-entity>
-        </a-scene>
-    </body>
-</html>
+            <a-entity
+                id="bowser-model1"
+                scale="106.43347211899357 106.43347211899357 106.43347211899357"
+                rotation="270 0 0"
+                animation-mixer="loop: repeat;"
+                position="0 0 0"
+                gltf-model="#animated-asset1"
+            ></a-entity>
+        </a-marker>
+        <a-entity camera></a-entity>
+    </a-scene>
+    <!-- <h1>hi</h1> -->
+</div>
