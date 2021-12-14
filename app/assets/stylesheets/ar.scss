@@ -4,7 +4,10 @@
 
 .modal-back {
   position: fixed;
-  top: 0;right: 0;bottom: 0;left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   background-color: rgba(0, 0, 0, 0.8);
 }
 
@@ -30,4 +33,62 @@
 
 .modal-text {
   font-size: 22px;
+}
+
+/* ===== 雪を表示するコンテナのスタイル ===== */
+.snow-container {
+  position: relative;
+  height: 100vh; /* コンテナの高さ */
+  width: 100%; /* コンテナの横幅 */
+  overflow: hidden;
+  background-color: #000; /* コンテナの背景 */
+}
+
+/* ===== 雪のスタイル ===== */
+.snow {
+  background-color: #fff; /* 雪の色 */
+  border-radius: 50%;
+  position: absolute;
+  animation: animate-snow 10s linear;
+}
+
+/* ===== 雪のアニメーション ===== */
+@keyframes animate-snow {
+  0% {
+    opacity: 0;
+    top: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    top: 100vh;
+  }
+}
+
+.demo {
+  position: relative;
+  .button-container {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    .let-it-snow {
+      width: 150px;
+      height: 70px;
+      font-size: 20px;
+      background-color: green;
+      border: 3px solid red;
+      color: white;
+      border-radius: 50px;
+      font-weight: 700;
+    }
+  }
 }
