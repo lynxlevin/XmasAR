@@ -80,7 +80,9 @@
     bottom: 20px;
     left: 20px;
     right: 20px;
-    .let-it-snow {
+    display: flex;
+    justify-content: space-around;
+    .button {
       width: 150px;
       height: 70px;
       font-size: 20px;

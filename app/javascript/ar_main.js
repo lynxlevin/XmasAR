@@ -13,9 +13,6 @@ import { createSnow } from 'utils/createSnow';
 
 //                 // マーカーを検出したイベントの登録
 //                 marker.addEventListener('markerFound', async function () {
-//                         // // AR発見の効果音を鳴らす
-//                         // const getSound = document.getElementById('get_sound');
-//                         // getSound.play();
 //                         console.log('hello');
 //                 });
 
@@ -38,6 +35,20 @@ window.addEventListener('DOMContentLoaded', ()=> {
       count++;
       // 雪を生成する間隔をミリ秒で指定
       setInterval(() => {createSnow(container)}, 100);
+    }
+  });
+
+  const jingleBells = document.querySelector('.jingle-bells');
+  const bellSound = new Audio('bells.mp3');
+
+  jingleBells.addEventListener("click", () => {
+    if (!jingleBells.classList.contains('playing')) {
+      jingleBells.classList.add('playing');
+      bellSound.currentTime = 1;
+      bellSound.play();
+    } else {
+      jingleBells.classList.remove('playing');
+      bellSound.pause();
     }
   });
 });
