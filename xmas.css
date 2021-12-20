@@ -1,0 +1,57 @@
+.top {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.snow-container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* ===== 雪のスタイル ===== */
+.snow {
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  animation: animate-snow 10s linear;
+}
+
+/* ===== 雪のアニメーション ===== */
+@keyframes animate-snow {
+  0% {
+    opacity: 0;
+    top: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    top: 100vh;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+#button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  z-index: 2000;
+  font-size: 56px;
+}
